@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>nhập số nguyên</h1>
+<label><input type="text" id="textvalue"></label>
+<button id="add" value="add" onclick="addArray()">add</button>
+<button id="display" value="'display" onclick="compareArray()">compare</button>
+<script>
+let x = 0
+let array = []
+function addArray(){
+    array[x]= document.getElementById('textvalue').value;
+    x++;
+    document.getElementById('textvalue').value= '';
+    console.log(array)
+}
+let index = 0
+function compareArray(){
+    for (let i=0;i<array.length;i++){
+    if(array[i]>10){
+        index= i;
+    document.write('so lon hon 10: '+array[i]+'at possition' + index+'<br>')
+    }
+    }
+
+}
+</script>
+</body>
+</html>
