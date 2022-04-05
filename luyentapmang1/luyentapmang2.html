@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>max</title>
+</head>
+<body>
+<h1>nhập giá trị</h1>
+<label><input type="text" id="textvalue"></label>
+<button id="addarray" onclick="addArray()">add</button>
+<button id="findmax" onclick="maxArray()">findmax</button>
+<script>
+  let x = 0
+  let array = []
+  function addArray(){
+    array[x] = document.getElementById('textvalue').value;
+    x++
+    document.getElementById('textvalue').value = '';
+    console.log(array);
+  }
+
+  function maxArray() {
+    let max = array[0];
+    let index = 0;
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] > max) {
+        max = +array[i];
+        index = i;
+        console.log(max)
+      }
+    }
+    document.write('max =' + max + 'condition at ' + index)
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>max-trungbinhcong</title>
+</head>
+<body>
+<h1>nhap so nguyen</h1>
+<label><input type="text" id='textvalue'></label>
+<button id="add" onclick="addArray()">add</button>
+<button id="findmax" onclick="maxArray()">findmax</button>
+<button id="tbc" onclick="averageArray()">averageArray</button>
+<div id="output"></div>
+<script>
+    let array = [];
+    let x = 0;
+    function addArray() {
+    array[x] =  document.getElementById('textvalue').value;
+        console.log(array[x]);
+        x++;
+        document.getElementById('textvalue').value = ''
+        document.getElementById('output').innerHTML = array;
+    }
+    function maxArray(){
+        let index = 0
+        let max = array[0]
+        for (i=0; i< array.length;i++){
+            if (array[i]>max){
+                max = array[i]
+                index = i
+            }
+        }document.getElementById('output').innerText = 'gia tri max =' + max + 'at condition' + index;
+    }
+
+    function averageArray(){
+        let total = 0;
+        let average = 0;
+        for(let i = 0; i <array.length;i++){
+            total += array[i]*1
+            console.log(total)
+        }
+        average = total / array.length;
+        document.getElementById('output').innerHTML =  average;
+    }
+</script>
+</body>
+</html>
