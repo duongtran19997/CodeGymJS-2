@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>songuyento</title>
 </head>
-<body>
-$END$
+<body><div id="output"></div>
+<script>
+    let n=+prompt('chon de:');
+    let i=2;
+    let count=0
+    while(count<20) {
+        while (i < n) {
+            if (n < 2) {
+                // alert(`${n} khong phai la so nguyen to`);
+                break;
+            } else if (n % i === 0) {
+                // alert(`${n} khong phai la so nguyen to`);
+                break;
+            } else {
+                // alert(`${n} la so nguyen to`);
+                console.log(n);
+                break;
+            }i++;
+        }n++;
+        if(n%i!==0){
+            count++;
+        }
+    }
+</script>
 </body>
 </html>

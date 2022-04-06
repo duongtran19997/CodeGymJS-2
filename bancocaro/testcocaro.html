@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cocaro</title>
+    <style>
+        td{
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+<table id="board" border="1px"></table>
+<script>
+   const PLAYER1= 'X';
+   const PLAYER2= 'O';
+   let turn = PLAYER1;
+   function createBoard(row,col){
+       let html = '';
+       for(let i =0;i<row;i++){
+           html += '<tr>';
+           for(let j =0;j<col;j++){
+               html += `<td id='cell-${j}-${i}' onclick='cocaro(${j},${i}'></td>`;
+           }
+           html += '</tr>'
+       }document.getElementById('board').innerHTML= html;
+   }
+   function cocaro(x,y){
+       let cell = document.getElementById(`cell-${x}-${y}`);
+       if(cell.innerHTML === ""){
+           if(turn === PLAYER1){
+               cell.innerHTML=PLAYER1;
+               turn = PLAYER2;
+           }else{
+               cell.innerHTML = PLAYER2;
+               turn = PLAYER1;
+           }
+       }
+   }
+   createBoard(10,10);
+</script>
+</body>
+</html>

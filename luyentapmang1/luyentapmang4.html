@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>daonguoc</title>
+</head>
+<body>
+<label><input type="text" id="add"></label>
+<button onclick="addArray()">add</button>
+<button onclick="revertArray()">revert</button>
+<div id="output"></div>
+  <script>
+      let x = 0
+      let array = [];
+      function addArray(){
+          array[x]=document.getElementById('add').value;
+          x++
+          document.getElementById('add').value = ''
+          document.getElementById('output').innerHTML=array
+      }
+      let n = array.length
+      let a = ''
+      function revertArray() {
+          for (let i = 0; i < n / 2; i++) {
+              a = array[i];
+              array[i] = array[n - 1 - i];
+              array[n - 1 - i] = a;
+          }
+          document.getElementById('output').value= array;
+      }
+
+  </script>
+</body>
+</html>
