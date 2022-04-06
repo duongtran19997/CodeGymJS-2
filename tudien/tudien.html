@@ -5,6 +5,22 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    let english = ['dog','cat','bird','bye','hello','hotel','motel'];
+    let vietnammese = ['chó','mèo','chim','lượn','chào','khách sạn','nhà nghỉ'];
+    let word = prompt('nhập từ cần dịch').toLowerCase() //lowercase để biến tất cả chữ hoa thành chữ thường
+    let index= -1;
+    for(let i =0;i<english.length;i++){
+        if(word===english[i]){
+            index=i;
+        }
+    }
+    if (index !== -1){
+        alert(vietnammese[index])
+    }else {
+        alert('k có từ để dịch')
+    }
 
+</script>
 </body>
 </html>
