@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mang7</title>
+</head>
+<body>
+  <label><input type="text" id="addtext"></label>
+    <button onclick="addArray()">addArray</button>
+    <button onclick="deleteV()">deleteV</button>
+  <div id="output"></div><br>
+  <label><input type="text" id="addV"></label>
+    <button onclick="addV()">addV</button>
+  <div id="outputV"></div>
+  //chưa làm được
+<script>
+    let array = []
+    let x = 0
+    let v = ''
+    function addArray(){
+        array[x] = document.getElementById('addtext').value;
+        x++;
+        document.getElementById('addtext').value = '';
+        document.getElementById('output').innerHTML= array;
+        return array;
+    }
+    function addV(){
+        v= document.getElementById('addV').value ;
+        x++
+        document.getElementById('addV').value = '';
+        document.getElementById('outputV').innerHTML= v;
+        return v;
+    }
+    function deleteV() {
+        let array = addArray();
+        let v = addV();
+        let x = 0
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === v) {
+                x = i;
+            }
+            for (let i = x; i < array.length-1; i++) {
+                array[i] = array[i + 1];
+            }
+        }
+    }
+</script>
+</body>
+</html>

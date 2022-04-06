@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mang6</title>
+</head>
+<body>
+<label><input type="text" id="addtext"></label>
+<button onclick="addArray()">add</button>
+<button onclick="compareArray()">compare</button>
+<div id="output"></div>
+<label><input type="text" id="addV"></label>
+<button onclick="addV()">addV</button>
+<div id="outputV"></div>
+<script>
+    let v = ''
+    let array = [];
+    let x = 0;
+    function addArray(){
+        array[x] = +document.getElementById('addtext').value;
+        x++;
+        document.getElementById('output').innerHTML=array;
+        document.getElementById('addtext').value = '';
+    }
+    function addV(){
+        v = +document.getElementById('addV').value;
+        document.getElementById('outputV').innerHTML= v;
+        document.getElementById('addV').value = ''
+    }
+    function compareArray(){
+        for(let i = 0;i<array.length;i++){
+            if(v === array[i]){
+                document.getElementById('outputV').innerHTML='V in your area'
+            }else{
+                document.getElementById('outputV').innerHTML= 'V not in your area'
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

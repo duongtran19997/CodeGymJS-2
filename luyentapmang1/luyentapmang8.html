@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mang8</title>
+</head>
+<body>
+<label><input type="text" id="addtext"></label>
+<button onclick="addArray()">addArray</button>
+<button onclick="arrangeArray()">arrange</button>
+<div id="output"></div><br>
+<script>
+    let array = [];
+    let x = 0;
+    function addArray(){
+        array[x] = document.getElementById('addtext').value;
+        x++;
+        document.getElementById('addtext').value = '';
+        document.getElementById('output').innerHTML= array;
+        return array;
+    }
+    function arrangeArray(){
+        let array = addArray();
+        array.sort();
+        document.getElementById('output').innerHTML = array;
+    }
+   </script>
+</body>
+</html>
