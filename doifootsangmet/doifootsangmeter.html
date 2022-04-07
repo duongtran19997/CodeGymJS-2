@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doifootsangmeter</title>
+</head>
+<body>
+<label><input id="addvalue"></label>
+<button onclick="meter()">doisangmet</button>
+<button onclick="feet()">doisangfeet</button>
+<div id="output"></div>
+<script>
+    let x = 0;
+    let y = 0;
+    function meter(){
+        x = document.getElementById('addvalue').value;
+        y = 3.278*x
+        document.getElementById('output').innerHTML=y + 'm';
+        document.getElementById('addvalue').value='';
+    }
+    function feet(){
+        x = document.getElementById('addvalue').value;
+        y = 0.305*x
+        document.getElementById('output').innerHTML=y + 'ft';
+        document.getElementById('addvalue').value = '';
+    }
+</script>
+</body>
+</html>
