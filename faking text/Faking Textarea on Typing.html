@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking Textarea on Typing</title>
+</head>
+<body>
+<h2> Type anything slowly</h2>
+<label><textarea id="txt" cols="30" rows="5"></textarea></label>
+<script>
+    let array = 'TÔI LÀ MỘT ĐỨA NGỐC';
+    let type = document.getElementById('txt');
+    type.onkeyup = troll;
+    let count = 0;
+    function troll(){
+        document.getElementById('txt').value='';
+        count++;
+        for(let i=0;i<count;i++){
+            document.getElementById('txt').value += array[i];
+        }
+            if(count>=array.length){
+                count = 0;
+            }
+    }
+</script>
+</body>
+</html>
