@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mangchiaba</title>
+</head>
+<body>
+<label><input id="addvalue"></label>
+<button onclick="addArray()">add</button>
+<button onclick="averageandsum()">average and sum</button>
+<div id="output"></div>
+<script>
+    let array =[];
+    let x = 0;
+    let result = 0;
+    function addArray(){
+        array[x] = document.getElementById('addvalue').value;
+        x++;
+        document.getElementById('addvalue').value='';
+        document.getElementById('output').innerHTML=array;
+    }
+    function averageandsum() {
+        let j = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] % 3 === 0) {
+                result += array[i]*1;
+                j++;
+                console.log(result,j)
+            }
+        }document.getElementById('output').innerHTML= (result/j);
+    }
+
+</script>
+</body>
+</html>
