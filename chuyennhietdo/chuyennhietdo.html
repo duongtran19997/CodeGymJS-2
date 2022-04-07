@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><h1>Temperator Converter</h1>
+<p>type a value in the fahrenheit to convert the value to the celcius</p>
+<label>Fahrenheit<input type="text" id="add"></label>
+<button onclick="addValue()">Đổi</button>
+<p>Celcius:<div id="output"></div></p>
+<script>
+    let C = 0;
+    function addValue() {
+        let F = +document.getElementById('add').value;
+        C = (F - 32)/1.8;
+        document.getElementById('output').innerHTML = C;
+    }
+</script>
+</body>
+</html>
